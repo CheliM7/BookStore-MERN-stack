@@ -29,7 +29,7 @@ app.get('/', (request, response) => {
 app.use('/books', booksRoute);
 
 mongoose
-  .connect(mongoDBURL)
+  .connect('mongodb+srv://root:root@book-store-mern.obtxdue.mongodb.net/books-collection?retryWrites=true&w=majority' )
   .then(() => {
     console.log('App connected to database');
     app.listen(PORT, () => {
@@ -39,4 +39,3 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-  
